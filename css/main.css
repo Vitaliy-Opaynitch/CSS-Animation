@@ -1,0 +1,246 @@
+@-webkit-keyframes moveSquare {
+  from {
+    left: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    left: 15%;
+    background: linear-gradient(50deg, #b90000, #ffee00);
+    -webkit-transform: scale(1.2) rotate(30deg);
+            transform: scale(1.2) rotate(30deg);
+  }
+  50% {
+    left: 30%;
+    background: linear-gradient(60deg, #850000, #e7aa00);
+    -webkit-transform: scale(1.3) rotate(40deg);
+            transform: scale(1.3) rotate(40deg);
+  }
+  75% {
+    left: 15%;
+    background: linear-gradient(70deg, #800101, #f09c00);
+    -webkit-transform: scale(1.2) rotate(50deg);
+            transform: scale(1.2) rotate(50deg);
+  }
+  to {
+    left: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes moveSquare {
+  from {
+    left: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    left: 15%;
+    background: linear-gradient(50deg, #b90000, #ffee00);
+    -webkit-transform: scale(1.2) rotate(30deg);
+            transform: scale(1.2) rotate(30deg);
+  }
+  50% {
+    left: 30%;
+    background: linear-gradient(60deg, #850000, #e7aa00);
+    -webkit-transform: scale(1.3) rotate(40deg);
+            transform: scale(1.3) rotate(40deg);
+  }
+  75% {
+    left: 15%;
+    background: linear-gradient(70deg, #800101, #f09c00);
+    -webkit-transform: scale(1.2) rotate(50deg);
+            transform: scale(1.2) rotate(50deg);
+  }
+  to {
+    left: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font: normal 400 15px/1.3 "Impact", "Arial Narrow Bold", sans-serif;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 20px;
+  background: #78cccb;
+}
+
+.nav {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.nav .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 0;
+  height: 100%;
+  list-style-type: none;
+}
+
+.nav .menu__item {
+  position: relative;
+}
+
+.nav .menu__item::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: #e9e9e9;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.nav .menu__item:hover::after {
+  width: 100%;
+}
+
+.nav .menu__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 17px;
+}
+
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 40px;
+}
+
+.main .inform__text {
+  margin-bottom: 50px;
+}
+
+.main .circle {
+  margin-top: 100px;
+}
+
+.main .circle__content {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #000000;
+  background: linear-gradient(45deg, #ff0303, #ffff00);
+  animation: moveSquare 5s linear reverse infinite;
+  -webkit-box-shadow: 3px 8px 4px rgba(0, 0, 0, 0.705);
+          box-shadow: 3px 8px 4px rgba(0, 0, 0, 0.705);
+}
+
+.main .circle__content:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.main .square {
+  position: relative;
+  margin-top: 80px;
+  margin-left: 40%;
+  height: 300px;
+  width: 300px;
+  font-weight: 300;
+}
+
+.main .square__content {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 15px 35px #00000066;
+          box-shadow: 0 15px 35px #00000066;
+}
+
+.main .square__content::after {
+  position: absolute;
+  content: "Gradient Worm";
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: #ffffff;
+  background: #000303;
+  height: 90%;
+  width: 90%;
+  left: 5%;
+  top: 5%;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .square__content::before {
+  content: "";
+  width: 180%;
+  height: 180%;
+  position: absolute;
+  left: -45%;
+  top: -45%;
+  background: conic-gradient(#fdcaff, #fca3ff, #fb84ff, #fb84ff, #f957ff, #f700ff, #f700ff);
+  -webkit-animation: spin 2.5s linear infinite;
+          animation: spin 2.5s linear infinite;
+}
+/*# sourceMappingURL=main.css.map */
